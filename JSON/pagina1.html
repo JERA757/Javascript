@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lectura de JSON primera forma</title>
+</head>
+<body>
+    
+    <!-- Primera forma lectura 
+         de archivos JSON (NO REALIZAR SÓLO ES MOSTRATIVO): 
+    --> 
+    <div id = "caja"></div> 
+
+    <script>
+
+        let miPersona = {
+            "Nombre": "Eduardo Rivas", 
+            "Edad": 32,
+            "Estudiante": true, 
+            "Telefonos": [
+                "123-456-7890",
+                "987-654-3210"
+            ],
+            "Direccion": {
+                "Calle": "123 Main St",
+                "Ciudad": "Montevideo",
+                "Codigo Postal": "12345"
+            }
+        } 
+
+        let elementoTexto = document.getElementById("caja");
+        
+        elementoTexto.textContent = "Nombre completo: " 
+        + miPersona.Nombre;
+
+        elementoTexto.textContent += "Edad: " + miPersona.Edad;
+
+        elementoTexto.textContent += "Ciudad: " + miPersona.Direccion.Ciudad;
+
+    </script>
+
+</body>
+</html>

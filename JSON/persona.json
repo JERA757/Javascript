@@ -1,0 +1,14 @@
+{
+    "Nombre": "Eduardo Rivas", 
+    "Edad": 32,
+    "Estudiante": true, 
+    "Telefonos": [
+        "123-456-7890",
+        "987-654-3210"
+    ],
+    "Direccion": {
+        "Calle": "123 Main St",
+        "Ciudad": "Montevideo",
+        "Codigo Postal": "12345"
+    }
+} 

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segunda forma de lectura de archivos JSON</title>
+</head>
+<body>
+    
+    <!-- Segunda forma de lectura de archivos JSON: -->
+    <!-- (Sólo es válido sí el archivo .json está en la misma carpeta) --> 
+    <div id="caja"></div> 
+
+    <script>
+
+        let datosJson; 
+
+        /*
+         * Método de JavaScript que recibe una petición de XML-HTTP para 
+         * ser gestionada en varialbe (request = petición):
+        */ 
+        let peticion = new XMLHttpRequest();
+
+        /*
+         * Método que permite la apertura de la respuesta al objeto 
+         * XMLHttpRequest. En donde el primer argumento es el valor
+         * de la petición (GET, POST, PUT, PATH, DELETE, etc); 
+         * el segundo argumento es el archivo .json con o sin la ruta
+         * donde está alojado; y el tercero es la sincronización, lo cual 
+         * permite el bloqueo de la aplicación para procesar la solicitud
+         * (un valor de true es para la sincronización, y un valor de 
+         * false es para la asincronización): 
+        */
+       peticion.open('GET', 'persona.json', true);
+
+       // Método que permite recibir el tipo de petición a procesar:
+       peticion.responseType = 'json';
+
+       /*
+        * Método permite la carga de la información una vez procesado el
+        * carga de información de forma éxitosa a la aplicación JavaScript
+        * (Está contenida en una función anónima):
+       */
+       peticion.onload = function(){
+
+        // Verifica si el estodo es éxitoso (200):
+        if (peticion.status === 200){
+
+            // Almacena la respuesta de la petición en la variable datosJson:
+            datosJson = peticion.response; 
+
+            let elementoTexto = document.getElementById('caja');
+
+            elementoTexto.textContent = datosJson.Nombre; 
+
+        } else{
+
+            // Procesamiento de errores. 
+        }
+
+       }
+
+       // Método que permite el envío de la petición al servidor:
+       peticion.send();
+
+    </script>
+    
+</body>
+</html>

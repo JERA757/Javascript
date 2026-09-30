@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tercera forma de lectura JSON</title>
+</head>
+<body>
+
+    <!-- Tercera forma de lectura JSON: fetch -->
+
+    <div id="caja"></div>
+
+    <script>
+
+        let datosJson; 
+
+        /*
+        * Método que recibe el fichero o la ruta donde se localiza el JSON
+        * el primer then es donde recibe recibe las promesas cumplidas y 
+        * es donde el fichero es parciado a JavaScript y el tercer then 
+        * se obtiene la promesa procesada. 
+        */
+       fetch('persona.json').then((respuesta) => respuesta.json()).then((salida) => 
+            {
+                datosJson = salida; 
+                let elementoTexto = document.getElementById("caja");
+                elementoTexto.textContent = datosJson.Nombre + "\n";
+                elementoTexto.textContent += datosJson.Telefonos[0] + "\n";
+                elementoTexto.textContent += datosJson.Direccion.Ciudad + "\n";
+            }
+      ).catch((error) => 
+        function(error){
+            alert(error);
+        }
+     );
+
+    </script>
+
+</body>
+</html>
