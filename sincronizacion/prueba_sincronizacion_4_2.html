@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sincronización en JavaScript</title>
+</head>
+<body>
+    
+    <!-- async - await: -->
+    <script>
+
+        async function obtenerDatos(){
+
+            let respuesta = await fetch(
+                'https://api.datos.gob.mx/v1/precio.gasolina.publico');
+
+            let datos = await respuesta.json();
+
+            console.log(datos);
+
+        } 
+
+        obtenerDatos(); 
+        console.log('El código sigue');
+
+    </script> 
+    
+</body>
+</html>

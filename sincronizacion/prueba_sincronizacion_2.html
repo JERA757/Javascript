@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sincronización en JavScript: callbacks</title>
+</head>
+<body>
+    
+    <!-- Callbacks en JavaScript: -->
+    <script>
+
+        function avanzaFila(callback){
+
+            setTimeout(function(){
+
+                console.log('Tu turno ha llegado');
+                callback();
+
+            }, 5000);
+
+        } 
+
+        function llamada(){
+
+            console.log('¡Te presentas a tu turno!');
+        }
+
+        console.log('Llegas a la fila');
+        avanzaFila(llamada);
+        console.log('Te vas a comprar un café');
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de sincronización en JavaScript</title>
+</head>
+<body>
+    
+    <script>
+
+        function obtenerUsuarios(){
+
+            return new Promise(function(resolve, reject){
+
+                let xhr = new XMLHttpRequest(); 
+
+                // Realiza la apertura: 
+                xhr.open('GET', 'https://jsonplaceholder.typecode.com/users'); 
+
+                // Carga el resultado de la petición: 
+                xhr.onload = function(){
+
+                    if (xrh.status === 200){
+
+                        /*
+                         * Se genera el parceamiento de la petición a formato
+                         * JSON:
+                        */
+                        resolve(JSON.parse(xhr.responseText));
+
+                    } else {
+
+                        reject(xhr.statusText);
+                    }
+                };
+
+                // Se envía la solicitud: 
+                xhr.send(); 
+
+            });
+        } 
+
+        obtenerUsuarios().then(function(usuarios){
+
+            console.log(usuarios);
+
+        }).catch(function(error){
+
+            console.log(error);
+        });
+
+    </script> 
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sincronización en JavaScript</title>
+</head>
+<body>
+
+    <!-- Prueba de la sincronización/asincronización: -->
+    <script>
+
+        // Acción 1: 
+        console.log('Inicio del código sincrono'); 
+
+        // Acción 2: (Función asíncrona)
+       /*
+        * Método que establece el tiempo a trabajar con 
+        * un segmento de código (expresado en milisegundos):
+       */
+       setTimeout(function(){
+
+        // Ejecuta la acción en segundo plano: 
+         for(let f = 0; f < 10; f++){
+
+            console.log(f);
+        }
+
+       }, 0);
+
+        // Acción 3: 
+        console.log('Fin del código síncrono');
+
+    </script>
+    
+</body>
+</html>

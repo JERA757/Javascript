@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sincronización en JavaScript</title>
+</head>
+<body>
+    
+    <!-- Segunda prueba de sincronización en JavaScript: promesas -->
+    <script>
+
+        let promesa1 = new Promise(function(resolve, reject){
+
+            setTimeout(resolve, 5000, '¡Saludos a todos. Soy promesa 1!');
+        });
+
+        let promesa2 = new Promise(function(resolve, reject){
+
+            setTimeout(resolve, 10000, '¡Buenas tardes, es promesa 2!');
+        });
+
+        /*
+         * Método estático que espera la resolusión de todas las promesas, 
+         * sin afectar la resolusión del código: 
+        */
+        Promise.all([promesa1, promesa2]).then(function(valores){
+
+            console.log(valores[0] + ' . ' + valores[1]);
+
+        }); 
+
+        console.log('¡El código sigue su curso!');
+
+    </script> 
+
+</body>
+</html>

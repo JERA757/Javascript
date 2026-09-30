@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de la síncronia en JavaScript</title>
+</head>
+<body>
+    
+    <!-- Promesas en JavaScript: -->
+    <script>
+
+        /*
+         * Instancia del objeto Promise, en donde ella recibe cómo 
+         * argumento dos parámetros que son utilizados como una 
+         * función anónima para ser ejecutadas (resolve = resuelto; 
+         * reject = rechazado):
+        */ 
+        let miPromesa = new Promise(function(resuelto, rechazado){
+
+            // Se invoca la función setTimeout: 
+            setTimeout(function(){
+
+                // Se fuerza el error: 
+                let error = false; 
+
+                if (error){
+
+                    rechazado('¡La promesa ha fallado!');
+
+                }else{
+
+                    resuelto('¡La promesa se ha cumplido!');
+                }
+            });
+        }); 
+
+        miPromesa.then(function(resultado){
+
+            console.log(resultado);
+
+        }).catch(function(error){
+
+            console.log(error);
+        });
+
+    </script>
+
+</body>
+</html>

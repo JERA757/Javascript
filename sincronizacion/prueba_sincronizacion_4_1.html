@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de sincronización en JavaScript</title>
+</head>
+<body>
+    
+    <!-- Programación asincrona: async y await-->
+    <script>
+
+        function obtenerDatos(){
+
+            return fetch(
+                'https:api.datos.gob.mx/v1/precio.gasolina.publico'
+            ).then(function (respuesta){
+                return respuesta.json();
+            }).then(function(datos){
+                console.log(datos);
+            }).catch(function(error){
+                console.error(error); 
+            });
+        }
+
+        obtenerDatos(); 
+        console.log('El código sigue');
+
+    </script> 
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sincronización en JavaScript</title>
+</head>
+<body>
+    
+    <!-- async - await con varias sincronizaciones: -->
+    <script>
+
+        async function obtenerDatos() {
+            
+            let respuestaGasolina = 
+             await fetch('https://api.datos.gob.mx/v1/precio.gasolina.publico');
+
+            let datosGasolina = await respuestaGasolina.json();
+
+            let respuestaDolar = 
+             await fetch('https://open.er-api.com/v6/latest/USD');
+
+            let datosDolar = await datosDolar.json(); 
+
+            console.log(datosGasolina, datosDolar);
+
+        }
+
+        obtenerDatos();
+
+    </script>
+    
+</body>
+</html>
