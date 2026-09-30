@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segundo formulario</title>
+</head>
+<body>
+    <!-- Control text:--> 
+     <h4>Acceso de usuarios</h4>
+     <form>
+        <label for="usuario">Usuario:</label>
+        <br>
+        <input type="text" name="textoUsuario" id="usuario">
+        <br>
+        <br>
+        <label for="contraseña">Contraseña:</label>
+        <br>
+        <input type="password" name="textoContrasena" id="contrasenha" 
+         value="confirmar" onclick="verificar()">
+        <br>
+     </form>
+
+     <script>
+        let control = 0;
+        let contrasenha = 'acceso1'; 
+
+        function verificar() {
+            let clave = document.getElementById('contrasenha').value;
+
+            if (clave != contrasenha || clave == ''){
+
+                alert('¡Clave vacía o incorrecta! intente de nuevo');
+                control++;
+
+                if (control >= 3){
+                    alert('Intentos agotados, acceso bloqueado ' +
+                     '\ Contactar a soporte técnico');
+                }
+            } else{
+
+                // Apertura una nueva ventana: 
+                window.open("http://www.google.com");
+            }
+        }
+     </script>
+</body>
+</html>

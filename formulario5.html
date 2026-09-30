@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario 5</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <h4>Seleccione disponibilidad de horario</h4>
+
+    <form>
+
+        <input type="radio" name="horario" id="radio1"> Matutino <br>
+        <input type="radio" name="horario" id="radio2"> Vespertino <br>
+        <input type="radio" name="horario" id="radio3"> Nocturno <br>
+        <br><br>
+        <input type="button" value="Confirmar" onclick="seleccionar()">
+
+    </form> 
+
+    <script>
+
+        function seleccionar() {
+
+            if (document.getElementById('radio1').checked) {
+
+                swal("Horario de 8:00 a.m. a 12:00 p.m.");
+
+            } else if (document.getElementById('radio2').checked) {
+
+                swal("Horario de 12:00 p.m. a 6:00 p.m.");
+
+            } else if (document.getElementById('radio3').checked) {
+                
+                swal("Horario de 6:00 p.m. a 10:00 p.m.");
+
+            } else {
+
+                swal("Por favor, selecciona un horario.");
+            }
+        }
+
+    </script>
+</body>
+</html>

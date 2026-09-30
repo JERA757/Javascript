@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario 8</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    
+    <!-- Evento onblur: --> 
+    <h4>Ingreso de datos: </h4>
+
+    <form>
+
+        <label for="nombre">Ingrese su nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" 
+         onblur="funcionBlur()" onfocus="enfocar()">
+        <br><br> 
+
+    </form>
+
+    <script>
+
+        function enfocar(){
+
+            document.getElementById('nombre').value = "";
+
+            document.getElementById('nombre').style.backgroundColor = "";
+        }
+
+        function funcionBlur(){
+
+            if (document.getElementById('nombre').value == ''){
+
+                document.getElementById('nombre').style.backgroundColor = "red";
+
+                swal("¡Debe ingresar datos!");
+
+            }
+        }
+
+    </script>
+
+</body>
+</html>

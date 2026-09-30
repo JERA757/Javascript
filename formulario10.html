@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario 10</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <!-- Redireccionamiento: -->
+    <form>
+
+        <label for="etiqueta">Ir a Wikipedia:</label>
+
+        <input type="button" value="Ir" onclick="redireccionar()">
+
+    </form> 
+
+    <script>
+
+        function redireccionar(){
+
+            if (window.confirm('¿Desea salir de la página?')){
+
+                // Atributo del direccionamiento: 
+                window.location = 'https://www.wikipedia.com';
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario 9</title>
+</head>
+<body>
+    
+    <!-- Funciones abrir() y confirmar() de JavaScript: -->
+    <h4>Funciones abrir y confirmar</h4>
+
+    <form>
+
+        <label for="etiqueta">Abrir en otra pestaña: </label>
+        <input type="button" value="Abrir" onclick="abrirPestaña()">
+        <br><br>
+
+        <label for="etiqueta1">Abrir en otra ventana: </label>
+        <input type="button" value="Abrir" onclick="abrirVentana()">
+        <br><br>
+
+        <input type="button" value="Salir" onclick="confirmar()">
+
+    </form> 
+
+    <script>
+
+        function abrirPestaña(){
+
+            // Función de Javascript para abrir una nueva pestaña:
+            let ventana = open();
+
+            ventana.document.write('Soy una pestaña nueva en la página WEB');
+        }
+
+        function abrirVentana(){
+
+            // Función de Javascript para abrir una nueva ventana:
+            let ventana = open('', '', 'width=400,height=250');
+
+            ventana.document.write('Soy otra ventana nueva de página WEB');
+        }
+
+        function confirmar(){
+
+            // Función de Javascript para mostrar un mensaje de confirmación:
+            let respuesta = confirm('¿Desea salir de la página?');
+
+            if(respuesta == true){
+                
+                // Objeto de JavaScript para cerrar la ventana actual:
+                window.close();
+            }
+            
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tercer formulario</title>
+</head>
+<body>
+    <!-- Control select index: -->
+    <h4>Colores del semáforo</h4>
+    <form>
+        <p>
+            <select name="selector" id="seleccion" onchange="cambiarColor()">
+                <option value="Puede continuar">Verde</option>
+                <option value="Precaución para detenerse">Amarillo</option>
+                <option value="Debe detenerse">Rojo</option>
+            </select>
+        </p>
+
+        <p>
+            Indice seleccionado:
+            <input type="text" id="texto1">
+        </p> 
+
+        <p>
+            Color Seleccionado:
+            <input type="text" id="texto2">
+        </p> 
+
+        <p>
+            Indicación:        
+            <input type="text" id="texto3">
+        </p>
+    </form>
+
+    <script>
+        function cambiarColor() {
+
+            let seleccion = document.getElementById("seleccion");
+
+            document.getElementById("texto1").value = seleccion.selectedIndex;
+            document.getElementById("texto2").value = 
+            seleccion.options[seleccion.selectedIndex].text;
+            document.getElementById("texto3").value = 
+            seleccion.options[seleccion.selectedIndex].value;
+
+        }
+    </script>
+</body>
+</html>

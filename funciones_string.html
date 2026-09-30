@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let palabra = 'JavaScript';
+        let saludos = 'Hola a todos';
+
+        // Calcular la longitud de una cadena de texto: 
+        document.write("La longitud de la palabra es: " + palabra.length + "<br>");
+
+        // Ver caracteres específicos en una cadena de texto:
+        document.write(palabra.slice(0, 4) + "<br>"); // Devuelve "Java"
+        document.write(palabra.substring(4, 10) + "<br>"); // Devuelve "Script"
+        
+        // Cambiar valores de un texto: 
+        document.write(saludos + '<br>'); // Devuelve "Hola a todos"
+        document.write(saludos.replace('Hola', 'Adiós') + '<br>'); // Devuelve "Adiós a todos"
+
+        // Convertir a mayúsculas o minúsculas:
+        document.write(palabra + '<br>');
+        document.write(palabra.toUpperCase() + '<br>'); // Devuelve "JAVASCRIPT"
+        document.write(palabra.toLowerCase() + '<br>'); // Devuelve "javascript"
+
+        // Concatenar texto: 
+        let palabra2 = 'Curso de ';
+        document.write(palabra2.concat(palabra) + '<br>'); // Devuelve "Curso de JavaScript"    
+
+        // Acotar espacios entre texto:
+        let palabra3 = '     HOLA     ';
+        document.write(palabra3.trimStart() + '<br>'); // Devuelve "HOLA     "
+        document.write(palabra3.trimEnd() + '<br>'); // Devuelve "     HOLA"
+        document.write(palabra3.trim() + '<br>'); // Devuelve "HOLA"
+
+        // Cortar cantidad de caracteres:
+        document.write(palabra.split('Script') + '<br>');
+    </script>
+</body>
+</html>

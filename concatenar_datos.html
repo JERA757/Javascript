@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Cometario de una sola línea
+        let nombre = "Juan";
+        let apellido = "Pérez";
+        let edad = 36;
+        
+        document.write(nombre + " " + apellido); // Concatenar con espacio
+        document.write("<br>"); // Salto de línea
+        document.write("Nombre: "+ nombre +"  "+" Apellido: " + apellido); 
+        // Concatenar con etiquetas HTML 
+        document.write("<br>"); // Salto de línea
+        document.write(nombre.concat(" ", apellido)); 
+        // Concatenar usando el método concat
+        document.write("<br>");
+        document.write(nombre, " ", apellido);
+        document.write("<br>");
+        document.write("La edad de ", nombre, " es ",edad);
+
+        /*
+         * Comentario de varias líneas
+         * Aquí se pueden escribir varias líneas de texto sin que afecten al código
+        */ 
+
+        /**
+         * Comentario de documentación
+         * Este tipo de comentario se utiliza para documentar funciones, clases,
+         *  etc.
+         * Se puede usar con herramientas como JSDoc para generar documentación 
+         * automática
+        */
+
+    </script>
+</body>
+</html>

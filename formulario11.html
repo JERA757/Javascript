@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario 11</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    
+    <form>
+
+        <p>
+            <textarea name="areaTexto" id="texto" rows="10" cols="35"
+             maxlength="140" onfocus="vaciar(this)"></textarea>
+        </p> 
+
+        <p>
+            Caracteres disponibles: <span id="cantidad">20</span>
+        </p>
+
+    </form>
+
+    <script>
+
+        document.getElementById("texto").addEventListener('keyup', caracteres); 
+
+        function caracteres() {
+
+            let conteo = document.getElementById("texto").value.length;
+
+            let disponibles = 20 - parseInt(conteo);
+
+            /*
+             * Actualiza el contenido del elemento con id "cantidad" 
+             * para mostrar los caracteres disponibles.
+             * Introduciendo un valor en un elemento HTML. 
+            */
+            document.getElementById("cantidad").innerHTML = disponibles;
+
+            if (disponibles <= 0) {
+                swal("¡Has alcanzado el límite de caracteres!");
+            }
+
+        }
+
+        function vaciar(elemento) {
+            
+            elemento.value = "";
+
+            document.getElementById("cantidad").innerHTML = 20;
+        }
+
+    </script>
+</body>
+</html>
